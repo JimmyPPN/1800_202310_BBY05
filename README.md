@@ -6,9 +6,12 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* ...
+
+
 * Jaskirat Singh (Former computer networking student)
-* ...
+
+* ... Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
+
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
