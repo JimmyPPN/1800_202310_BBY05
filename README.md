@@ -8,9 +8,9 @@ This browser based web application to ...
 List team members and/or short bio's here... 
 
 
-* Jaskirat Singh (Former computer networking student)
+* Jaskirat Singh (Former computer networking student). I'm excited about this project because I get more hands-on programming experience
 
-* ... Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
+* Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
 
 	
 ## 3. Technologies and Resources Used
