@@ -7,12 +7,21 @@ This browser based web application to ...
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * ...Hi my name is Brandon, cool
 =======
 * ... Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
 >>>>>>> d3797adb99528fd3f7bf71ca841c365607d22a7b
 * ...
 * ...
+=======
+
+
+* Jaskirat Singh (Former computer networking student). I'm excited about this project because I get more hands-on programming experience
+
+* Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
+
+>>>>>>> 6d3c3a74fe30de060f02fbda00d0a909dd1c00ab
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
