@@ -10,7 +10,7 @@ List team members and/or short bio's here...
 
 * Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
 
-* Jaskirat Singh (Former computer networking student). I'm excited about this project because I get more hands-on programming experience
+* Jaskirat Singh (Former computer networking student). I'm excited about this project because I get more hands-on programming experience. 
 
 	
 ## 3. Technologies and Resources Used
