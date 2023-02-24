@@ -1,1 +1,9 @@
+/* body{
+    background-color: lightblue;
+} */
 
+#bottom-navbar > img {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+  }
