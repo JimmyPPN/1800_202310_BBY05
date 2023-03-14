@@ -126,74 +126,70 @@
         <thead>
           <tr>
             <th style="width: 25%;"></th>
-            <!-- <th style="width: 22%;"> CLOUD_PCT </th> -->
             <th style="width: 22%;"> MAX_TEMP </th>
             <th style="width: 22%;"> MIN_TEMP </th>
             <th style="width: 22%;"> FEELS-LIKE </th>
             <th style="width: 22%;"> HUMIDITY </th>
-            <!-- <th style="width: 22%;"> SUNRISE </th> -->
             <th style="width: 22%;"> WIND_DEGREES </th>
             <th style="width: 22%;"> WIND_SPEED </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row" class="text-start">Toronto</th>
-            <!-- <td>2</td> -->
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+          <tr id="toronto-row">
+            <th scope="row" class="text-start">Toronto <a class="btn btn-outline-secondary card-href"
+                href="../eachLocation.html">more ...</a></th>
+            <td id="toronto-max-temp"></td>
+            <td id="toronto-min-temp"></td>
+            <td id="toronto-feels-like"></td>
+            <td id="toronto-humidity"></td>
+            <td id="toronto-wind-degrees"></td>
+            <td id="toronto-wind-speed"></td>
           </tr>
-          <tr>
+          <tr id="montreal-row">
             <th scope="row" class="text-start">Montreal</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <td id="montreal-max-temp"></td>
+            <td id="montreal-min-temp"></td>
+            <td id="montreal-feels-like"></td>
+            <td id="montreal-humidity"></td>
+            <td id="montreal-wind-degrees"></td>
+            <td id="montreal-wind-speed"></td>
           </tr>
-        </tbody>
-
-        <tbody>
-          <tr>
+          <tr id="ottawa-row">
             <th scope="row" class="text-start">Ottawa</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <td id="ottawa-max-temp"></td>
+            <td id="ottawa-min-temp"></td>
+            <td id="ottawa-feels-like"></td>
+            <td id="ottawa-humidity"></td>
+            <td id="ottawa-wind-degrees"></td>
+            <td id="ottawa-wind-speed"></td>
           </tr>
-          <tr>
+          <tr id="edmonton-row">
             <th scope="row" class="text-start">Edmonton</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <td id="edmonton-max-temp"></td>
+            <td id="edmonton-min-temp"></td>
+            <td id="edmonton-feels-like"></td>
+            <td id="edmonton-humidity"></td>
+            <td id="edmonton-wind-degrees"></td>
+            <td id="edmonton-wind-speed"></td>
           </tr>
-          <tr>
+          <tr id="victoria-row">
             <th scope="row" class="text-start">Victoria</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <td id="victoria-max-temp"></td>
+            <td id="victoria-min-temp"></td>
+            <td id="victoria-feels-like"></td>
+            <td id="victoria-humidity"></td>
+            <td id="victoria-wind-degrees"></td>
+            <td id="victoria-wind-speed"></td>
           </tr>
-          <tr>
+          <tr id="winnipeg-row">
             <th scope="row" class="text-start">Winnipeg</th>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <td id="winnipeg-max-temp"></td>
+            <td id="winnipeg-min-temp"></td>
+            <td id="winnipeg-feels-like"></td>
+            <td id="winnipeg-humidity"></td>
+            <td id="winnipeg-wind-degrees"></td>
+            <td id="winnipeg-wind-speed"></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -202,9 +198,6 @@
   <br>
   <br>
   <br>
-
-
-
   <!-- Footer -->
   <div class="cell footer">
     <nav id="foot"></nav>
@@ -217,7 +210,15 @@
   <script src="scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/main.js"></script>
-
+  <script src="./scripts/weather.js"></script>
+  <script>
+    fetchData("Toronto");
+    fetchData('Montreal');
+    fetchData('Ottawa');
+    fetchData('Edmonton');
+    fetchData('Victoria');
+    fetchData('Winnipeg');
+  </script>
 </body>
 
 </html>

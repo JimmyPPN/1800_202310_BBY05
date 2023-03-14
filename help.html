@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>WeatherEye</title>
+  <meta name="comp1800 template" content="My 1800 App" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-- Other libraries go here -->
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <!-- Add an onclick attribute to define click event handler -->
+  <!-- <button onclick="window.location.href='login.html'" class="btn btn-primary btn-lg" type="button">Login/Signup</button> -->
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+  <div class="cell nav-bar">
+    <nav id="nav"></nav>
+  </div>
+
+  <!-- body -->
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          Q: What makes the WeatherEye app unique?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          The WeatherEye app stands out with its personalized comments, real-time alerts, and integration with other
+          services to help users prepare for severe weather changes. Additionally, the app uses live data from
+          WeatherAPI to provide up-to-date weather information.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo">
+            Q: How does the personalized comment feature work?
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            The personalized comment feature in WeatherEye provides customized advice based on location and weather
+            conditions. Users can view comments by other users and provide feedback or report inappropriate comments.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item pb-8">
+        <h2 class="accordion-headern" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree">
+            Q: How often is the weather information updated in WeatherEye?
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+            WeatherEye updates the weather information in real-time, providing users with the most accurate and
+            up-to-date
+            data available.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item pb-8">
+        <h2 class="accordion-headern" id="panelsStayOpen-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseFour">
+            Q: Can I use my WeatherEye user profile on multiple devices?
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingFour">
+          <div class="accordion-body">
+            Yes, you can use your WeatherEye user profile on multiple devices by logging in with the same email address
+            and
+            password on each device. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item pb-8">
+      <h2 class="accordion-headern" id="panelsStayOpen-headingFive">
+
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive">
+          Q: Does WeatherEye offer support for multiple locations?
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive">
+        <div class="accordion-body">
+          Yes, WeatherEye allows users to add and switch between multiple locations to view weather information for
+          different areas. </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="cell footer">
+    <nav id="foot"></nav>
+  </div>
+
+
+  <!-- Link to scripts of your own -->
+  <script src="./scripts/firebaseAPI_BBY05.js"></script>
+  <script src="scripts/skeleton.js"></script>
+  <script src="./scripts/script.js"></script>
+  <!-- <script src="./scripts/user.js"></script> -->
+  <!-- <script src="./scripts/main.js"></script> -->
+</body>
+
+</html>
