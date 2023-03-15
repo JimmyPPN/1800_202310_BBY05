@@ -56,3 +56,14 @@ else {
     window.location.replace("main.html?city=" + city.value);
   });
 }
+
+
+function addToFavorites(cityName) {
+  // Get the location from the cityName element
+  const location = document.getElementById(cityName).textContent;
+
+  // Add the location to local storage
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  favorites.push(location);
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}

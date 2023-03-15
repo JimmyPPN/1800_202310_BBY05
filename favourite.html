@@ -42,49 +42,30 @@
     <nav id="nav"></nav>
   </div>
   <br />
-  <br />
-  <br />
 
   <div class="container">
     <h1>Favorites</h1>
   </div>
   <br />
 
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
-        role="tab" aria-controls="nav-location" aria-selected="true">
-        Locations
-      </button>
-      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
-        role="tab" aria-controls="nav-comments" aria-selected="false">
-        Comments
-      </button>
-    </div>
-  </nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+      role="tab" aria-controls="nav-location" aria-selected="true">
+      Locations
+    </button>
+  </div>
+
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
       <div class="card" style="width: 100%">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" style="height: 10em">Location #1</li>
-          <li class="list-group-item" style="height: 10em">Location #2</li>
-          <li class="list-group-item" style="height: 10em">Location #3</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <div class="card" style="width: 100%">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" style="height: 10em">Comment #1</li>
-            <li class="list-group-item" style="height: 10em">Comment #2</li>
-            <li class="list-group-item" style="height: 10em">Comment #3</li>
-          </ul>
-        </div>
+        <ol id="favorites-list" class="list-group list-group-flush">
+        </ol>
       </div>
     </div>
   </div>
+
+
+
   <!-- Footer -->
   <div class="cell footer">
     <nav id="foot"></nav>
@@ -96,7 +77,8 @@
   <script src="./scripts/firebaseAPI_BBY05.js"></script>
   <script src="scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
-  <script src="./scripts/authentication.js"></script>
+  <!-- <script src="./scripts/authentication.js"></script> -->
+  <script src="./scripts/favourite.js"></script>
 </body>
 
 </html>
