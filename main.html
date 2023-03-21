@@ -61,6 +61,21 @@
   <!-- Weather Info Body -->
   <div class="container">
     <h1 class="my-4 text-center">Weather for <span id="cityName">Vancouver</span> <span class="favorite-icon text-danger" style="margin-left: 10px; cursor: pointer; "  ><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-heart-fill " viewBox="0 0 16 16" onclick="addToFavorites('cityName')"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg></span></h1>
+    <div class="row">
+      <div class="col-md-12 text-center pb-4 ">
+        <button class="btn btn-primary text-center" style="margin-right: 10px" id="live-comments"
+          onclick="showLiveComments()">Live Comments</button>
+        <button class="btn btn-secondary text-center" style="margin-right: 10px" id="give-feedback"
+          onclick="showFeedbackForm()">Give Feedback</button>
+
+      </div>
+    </div>
+    <div id="feedback-container" class="pb-4"> </div>
+
+    <!-- <div class="row"> -->
+    <!-- <div class="col-12"> -->
+    <div id="live-comments-container" class="pb-4"></div>
+    <!-- </div> -->
   </div>
   <main>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
