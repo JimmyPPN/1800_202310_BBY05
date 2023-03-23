@@ -37,9 +37,25 @@
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
-  <div class="cell nav-bar">
-    <nav id="nav"></nav>
-  </div>
+  <nav id="navbarPlaceholder" class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="../images/weathereye.png" height="36">
+            <b>WeatherEye</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><img src="../images/list.svg"></img></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<hr />
   <br />
   <br />
   <br />
@@ -61,19 +77,17 @@
       </div>
     </div>
   </div>
-  <!-- Footer -->
 
-  <div class="cell footer">
-    <nav id="foot"></nav>
-  </div>
+  <!-- Footer -->
+  <nav class="container text-dark fixed-bottom ">
+    <p class="text-center justify-content-center">© 2023 Company, Inc. All rights reserved.</p>
+</nav>
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI_BBY05.js"></script>
-  <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
-  <!-- <script src="./scripts/main.js"></script> -->
   <script>
     logout();       //make sure user is logged out
   </script>

@@ -1,15 +1,32 @@
-// Get favorites from localStorage or set an empty array
-const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+function doAll() {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // insertNameFromFirestore();
+      getFavorites(user);
+    } else {
+      console.log("No user is signed in");
+    }
+  });
+}
+doAll();
 
-// Function to update the favorites list
-const updateFavoritesList = () => {
-    const favoritesList = document.getElementById("favorites-list");
+// retrieve the user's favorite cities from firestore
+function getFavorites(user) {
+  db.collection("users")
+    .doc(user.uid)
+    .get()
+    .then((userDoc) => {
+      // Get the array of favorite cities
+      const favorites = userDoc.data().favorites || [];
 
-    // Clear the list first
-    favoritesList.innerHTML = "";
+      // Get the pointer to the favorites list element
+      const favoritesList = document.getElementById("favorites-list");
 
-    // Add each favorite to the list
-    favorites.forEach((city) => {
+      // Clear the list first
+      favoritesList.innerHTML = "";
+
+      // Iterate through the array of favorite cities
+      favorites.forEach((city) => {
         const li = document.createElement("li");
         li.className = "list-group-item ";
         li.style.height = "10em";
@@ -21,8 +38,9 @@ const updateFavoritesList = () => {
         citySpan.style.fontWeight = "bold";
         citySpan.style.fontSize = "1.5em";
         citySpan.addEventListener("click", () => {
-            window.location.href = `main.html?city=${city}`;
+          window.location.href = `main.html?city=${city}`;
         });
+
         li.appendChild(citySpan);
 
         // Add remove button to each favorite
@@ -32,18 +50,28 @@ const updateFavoritesList = () => {
         removeBtn.style.float = "right";
         removeBtn.innerText = "Remove";
         removeBtn.addEventListener("click", () => {
-            // Remove the city from favorites
-            const index = favorites.indexOf(city);
-            if (index > -1) {
-                favorites.splice(index, 1);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-                updateFavoritesList();
-            }
+          // Get a reference to the user document in Firestore
+          const userRef = db.collection("users").doc(user.uid);
+
+          // Remove the city from favorites in the user document
+          userRef
+            .update({
+              favorites: firebase.firestore.FieldValue.arrayRemove(city),
+            })
+            .then(() => {
+              console.log("City removed from favorites.");
+              getFavorites(user);
+            })
+            .catch((error) => {
+              console.error("Error removing city from favorites:", error);
+            });
         });
         li.appendChild(removeBtn);
 
         favoritesList.appendChild(li);
+      });
+    })
+    .catch((error) => {
+      console.error(error);
     });
-};
-
-updateFavoritesList();
+}
