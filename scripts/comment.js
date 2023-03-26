@@ -74,24 +74,20 @@ function createFeedbackItem(doc) {
           <div><strong>Title:</strong> ${feedback.title}</div>
           <div><strong>Description:</strong> ${feedback.description}</div>
           <div><strong>Date:</strong> ${new Date(
-            feedback.timestamp.toDate()
-          ).toLocaleDateString()}</div>
+        feedback.timestamp.toDate()
+      ).toLocaleDateString()}</div>
           <div class="d-flex justify-content-between align-items-center">
             <div>
-              <i class="material-icons thumb-icon" data-type="up" data-id="${
-                doc.id
-              }">thumb_up</i>
+              <i class="material-icons thumb-icon" data-type="up" data-id="${doc.id
+        }">thumb_up</i>
               <span class="like-count">${likes}</span>
-              <i class="material-icons thumb-icon" data-type="down" data-id="${
-                doc.id
-              }">thumb_down</i>
+              <i class="material-icons thumb-icon" data-type="down" data-id="${doc.id
+        }">thumb_down</i>
               <span class="dislike-count">${dislikes}</span>
             </div>
           </div>
         `;
-
       addThumbListeners(feedbackItem, doc.id);
-
       return feedbackItem;
     })
     .catch((error) => {
@@ -129,7 +125,6 @@ function addThumbListeners(feedbackItem, feedbackId) {
       dislikes: firebase.firestore.FieldValue.increment(1),
     });
   });
-
   // updates the like and dislike counts in real time
   db.collection("feedback")
     .doc(feedbackId)
@@ -243,8 +238,11 @@ function submitFeedback() {
       // clear the form
       document.querySelector("#feedback-form").reset();
 
-      // display a message to the user
-      alert("Thank you for your feedback!");
+      // display a message to the user using Bootstrap modal
+      const feedbackModal = new bootstrap.Modal(
+        document.querySelector("#feedback-modal")
+      );
+      feedbackModal.show();
     })
     .catch(function (error) {
       console.error("Error writing feedback to Firestore: ", error);

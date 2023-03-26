@@ -1,19 +1,25 @@
-#bgImage {
-    background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+.bg-container {
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+    filter: brightness(110%);
 }
 
-#bottom-navbar > img {
+#bgImage {
+    background-image: url(../images/weather.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#bottom-navbar>img {
     width: 45px;
     height: 45px;
     margin: 0 auto;
-  }
+}

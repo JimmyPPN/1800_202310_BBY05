@@ -1,5 +1,6 @@
-var currentUser;          //put this right after you start script tag before writing any functions.
+var currentUser;    // Current user's document in the database
 
+// Function to populate the user's info in the profile page
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
 
@@ -30,6 +31,7 @@ function populateUserInfo() {
 }
 populateUserInfo();
 
+// Function to edit the user's info in the profile page
 function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
 }

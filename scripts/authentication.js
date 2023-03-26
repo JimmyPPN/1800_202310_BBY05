@@ -22,9 +22,9 @@ var uiConfig = {
           .doc(user.uid)
           .set({
             //write to firestore. We are using the UID for the ID in users collection
-            name: user.displayName, //"users" collection
-            email: user.email, //with authenticated user's ID (user.uid)
-            country: "Canada", //optional default profile info
+            name: user.displayName, 
+            email: user.email, 
+            country: "Canada", 
           })
           .then(function () {
             console.log("New user added to firestore");
@@ -48,13 +48,7 @@ var uiConfig = {
   signInFlow: "popup",
   signInSuccessUrl: "main.html",
   signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    // firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ],
   // Terms of service url.
   tosUrl: "<your-tos-url>",
