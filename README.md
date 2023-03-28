@@ -7,7 +7,7 @@ This browser based web application to ...\\testing
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 
-* Hi my name is Brandon, cool
+* Brandon Rada (CST student). I'm excited about this project because I get Hands on experience and get to work in a team.
 
 * Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
 
