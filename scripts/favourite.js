@@ -40,9 +40,8 @@ function getFavorites(user) {
         citySpan.addEventListener("click", () => {
           window.location.href = `main.html?city=${city}`;
         });
-
         li.appendChild(citySpan);
-
+        
         // Add remove button to each favorite
         const removeBtn = document.createElement("button");
         removeBtn.type = "button";
@@ -52,7 +51,6 @@ function getFavorites(user) {
         removeBtn.addEventListener("click", () => {
           // Get a reference to the user document in Firestore
           const userRef = db.collection("users").doc(user.uid);
-
           // Remove the city from favorites in the user document
           userRef
             .update({
@@ -67,7 +65,6 @@ function getFavorites(user) {
             });
         });
         li.appendChild(removeBtn);
-
         favoritesList.appendChild(li);
       });
     })

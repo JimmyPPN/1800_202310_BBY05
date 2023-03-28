@@ -33,7 +33,7 @@ if (fileName.startsWith("main.html")) {
       .catch((err) => console.error(err));
   };
   document.getElementById("newCity").addEventListener("click", (e) => {
-    clearFeedbackDisplay;
+    clearFeedbackDisplay();
     e.preventDefault();
     window.location.replace("main.html?city=" + city.value);
     getWeather(city.value);
