@@ -66,6 +66,7 @@ function createFeedbackItem(doc) {
 
   return getUser(feedback.userId)
     .then((userDoc) => {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
       const username = userDoc.data().name;
       const feedbackItem = document.createElement("li");
       feedbackItem.classList.add("list-group-item", "mb-2");
@@ -75,7 +76,7 @@ function createFeedbackItem(doc) {
           <div><strong>Description:</strong> ${feedback.description}</div>
           <div><strong>Date:</strong> ${new Date(
         feedback.timestamp.toDate()
-      ).toLocaleDateString()}</div>
+      ).toLocaleDateString('en-US', options)}</div>
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <i class="material-icons thumb-icon" data-type="up" data-id="${doc.id

@@ -18,6 +18,20 @@
     width: 100%;
 }
 
+#bgBlur{
+    background-image: url(../images/weather.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    height:auto;
+    width:auto;
+}
+
+#testTable{
+    background-color: rgb(255, 255, 255);
+}
+
 #bottom-navbar>img {
     width: 45px;
     height: 45px;
