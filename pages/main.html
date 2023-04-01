@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 
-<body id="bgBlur">
+<body>
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
@@ -42,172 +42,174 @@
     <nav id="nav"></nav>
   </div>
 
-  <div class="px-4 py-5 my-2 text-center">
-    <h1 class="display-5">Good day, <span id="name-goes-here">Name</span></h1>
-    <hr />
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">
-        <small>"Life isn't about waiting for the storm to pass. It's about
-          learning to dance in the rain."</small>
-      </p>
-    </div>
-  </div>
-
-  <!-- Weather Info Body -->
-  <div class="container">
-    <h1 class="my-4 text-center">
-      Weather for <span id="cityName"></span>
-      <i id="favorite-cityName" class="material-icons text-danger" style="margin-left: 10px; cursor: pointer" width="36"
-        height="36" onclick="addToFavorites('cityName')">favorite_border</i>
-    </h1>
-    <div class="row">
-      <div class="col-md-12 text-center pb-4">
-        <button class="btn btn-primary text-center" style="margin-right: 10px" id="live-comments"
-          onclick="showLiveComments()">
-          Live Comments
-        </button>
-        <button class="btn btn-secondary text-center" style="margin-right: 10px" id="give-feedback"
-          onclick="showFeedbackForm()">
-          Give Feedback
-        </button>
+  <div id="bgBlur">
+    <div class="px-4 py-5 my-2 text-center">
+      <h1 class="display-5">Good day, <span id="name-goes-here">Name</span></h1>
+      <hr />
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          <small>"Life isn't about waiting for the storm to pass. It's about
+            learning to dance in the rain."</small>
+        </p>
       </div>
     </div>
-    <div id="feedback-container" class="pb-4"></div>
-    <div id="live-comments-container" class="pb-4"></div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Temperature</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="temp"></span><small class="text-muted fw-light"><span>&#8451;</span></small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>
-                    Min Temperature is <span id="min_temp"></span><span>&#8451;</span>
-                  </li>
-                  <li>
-                    Max Temperature is <span id="max_temp"></span><span>&#8451;</span>
-                  </li>
-                </ul>
+
+    <!-- Weather Info Body -->
+    <div class="container">
+      <h1 class="my-4 text-center">
+        Weather for <span id="cityName"></span>
+        <i id="favorite-cityName" class="material-icons text-danger" style="margin-left: 10px; cursor: pointer"
+          width="36" height="36" onclick="addToFavorites('cityName')">favorite_border</i>
+      </h1>
+      <div class="row">
+        <div class="col-md-12 text-center pb-4">
+          <button class="btn btn-primary text-center" style="margin-right: 10px" id="live-comments"
+            onclick="showLiveComments()">
+            Live Comments
+          </button>
+          <button class="btn btn-secondary text-center" style="margin-right: 10px" id="give-feedback"
+            onclick="showFeedbackForm()">
+            Give Feedback
+          </button>
+        </div>
+      </div>
+      <div id="feedback-container" class="pb-4"></div>
+      <div id="live-comments-container" class="pb-4"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Temperature</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">
+                    <span id="temp"></span><small class="text-muted fw-light"><span>&#8451;</span></small>
+                  </h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>
+                      Min Temperature is <span id="min_temp"></span><span>&#8451;</span>
+                    </li>
+                    <li>
+                      Max Temperature is <span id="max_temp"></span><span>&#8451;</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Humidity Info</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="humidity1"></span><small class="text-muted fw-light">%</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Humidity is <span id="humidity"></span>%</li>
-                  <li>
-                    Feels Like is <span id="feels_like"></span><span>&#8451;</span>
-                  </li>
-                </ul>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Humidity Info</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">
+                    <span id="humidity1"></span><small class="text-muted fw-light">%</small>
+                  </h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Humidity is <span id="humidity"></span>%</li>
+                    <li>
+                      Feels Like is <span id="feels_like"></span><span>&#8451;</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-primary">
-              <div class="card-header py-3 text-bg-primary border-primary">
-                <h4 class="my-0 fw-normal">Wind Info</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="wind_speed1"></span><small class="text-muted fw-light">km/hr</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Wind Speed is <span id="wind_speed"></span>km/hr</li>
-                  <li>Wind Degree is <span id="wind_degrees"></span></li>
-                </ul>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Wind Info</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">
+                    <span id="wind_speed1"></span><small class="text-muted fw-light">km/hr</small>
+                  </h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Wind Speed is <span id="wind_speed"></span>km/hr</li>
+                    <li>Wind Degree is <span id="wind_degrees"></span></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <h2 class="display-6 text-center mb-4">Common Places - Weather</h2>
-  <div class="table-responsive" id="testTable">
-    <table class="table text-center">
-      <thead>
-        <tr>
-          <th style="width: 25%"></th>
-          <th style="width: 22%">MAX_TEMP</th>
-          <th style="width: 22%">MIN_TEMP</th>
-          <th style="width: 22%">FEELS-LIKE</th>
-          <th style="width: 22%">HUMIDITY</th>
-          <th style="width: 22%">WIND_DEGREES</th>
-          <th style="width: 22%">WIND_SPEED</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr id="toronto-row">
-          <th scope="row" class="text-start">Toronto</th>
-          <td id="toronto-max-temp"></td>
-          <td id="toronto-min-temp"></td>
-          <td id="toronto-feels-like"></td>
-          <td id="toronto-humidity"></td>
-          <td id="toronto-wind-degrees"></td>
-          <td id="toronto-wind-speed"></td>
-        </tr>
-        <tr id="montreal-row">
-          <th scope="row" class="text-start">Montreal</th>
-          <td id="montreal-max-temp"></td>
-          <td id="montreal-min-temp"></td>
-          <td id="montreal-feels-like"></td>
-          <td id="montreal-humidity"></td>
-          <td id="montreal-wind-degrees"></td>
-          <td id="montreal-wind-speed"></td>
-        </tr>
-        <tr id="ottawa-row">
-          <th scope="row" class="text-start">Ottawa</th>
-          <td id="ottawa-max-temp"></td>
-          <td id="ottawa-min-temp"></td>
-          <td id="ottawa-feels-like"></td>
-          <td id="ottawa-humidity"></td>
-          <td id="ottawa-wind-degrees"></td>
-          <td id="ottawa-wind-speed"></td>
-        </tr>
-        <tr id="edmonton-row">
-          <th scope="row" class="text-start">Edmonton</th>
-          <td id="edmonton-max-temp"></td>
-          <td id="edmonton-min-temp"></td>
-          <td id="edmonton-feels-like"></td>
-          <td id="edmonton-humidity"></td>
-          <td id="edmonton-wind-degrees"></td>
-          <td id="edmonton-wind-speed"></td>
-        </tr>
-        <tr id="victoria-row">
-          <th scope="row" class="text-start">Victoria</th>
-          <td id="victoria-max-temp"></td>
-          <td id="victoria-min-temp"></td>
-          <td id="victoria-feels-like"></td>
-          <td id="victoria-humidity"></td>
-          <td id="victoria-wind-degrees"></td>
-          <td id="victoria-wind-speed"></td>
-        </tr>
-        <tr id="winnipeg-row">
-          <th scope="row" class="text-start">Winnipeg</th>
-          <td id="winnipeg-max-temp"></td>
-          <td id="winnipeg-min-temp"></td>
-          <td id="winnipeg-feels-like"></td>
-          <td id="winnipeg-humidity"></td>
-          <td id="winnipeg-wind-degrees"></td>
-          <td id="winnipeg-wind-speed"></td>
-        </tr>
-      </tbody>
-    </table>
+    <h2 class="display-6 text-center mb-4">Common Places - Weather</h2>
+    <div class="table-responsive" id="testTable">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 25%"></th>
+            <th style="width: 22%">MAX_TEMP</th>
+            <th style="width: 22%">MIN_TEMP</th>
+            <th style="width: 22%">FEELS-LIKE</th>
+            <th style="width: 22%">HUMIDITY</th>
+            <th style="width: 22%">WIND_DEGREES</th>
+            <th style="width: 22%">WIND_SPEED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="toronto-row">
+            <th scope="row" class="text-start">Toronto</th>
+            <td id="toronto-max-temp"></td>
+            <td id="toronto-min-temp"></td>
+            <td id="toronto-feels-like"></td>
+            <td id="toronto-humidity"></td>
+            <td id="toronto-wind-degrees"></td>
+            <td id="toronto-wind-speed"></td>
+          </tr>
+          <tr id="montreal-row">
+            <th scope="row" class="text-start">Montreal</th>
+            <td id="montreal-max-temp"></td>
+            <td id="montreal-min-temp"></td>
+            <td id="montreal-feels-like"></td>
+            <td id="montreal-humidity"></td>
+            <td id="montreal-wind-degrees"></td>
+            <td id="montreal-wind-speed"></td>
+          </tr>
+          <tr id="ottawa-row">
+            <th scope="row" class="text-start">Ottawa</th>
+            <td id="ottawa-max-temp"></td>
+            <td id="ottawa-min-temp"></td>
+            <td id="ottawa-feels-like"></td>
+            <td id="ottawa-humidity"></td>
+            <td id="ottawa-wind-degrees"></td>
+            <td id="ottawa-wind-speed"></td>
+          </tr>
+          <tr id="edmonton-row">
+            <th scope="row" class="text-start">Edmonton</th>
+            <td id="edmonton-max-temp"></td>
+            <td id="edmonton-min-temp"></td>
+            <td id="edmonton-feels-like"></td>
+            <td id="edmonton-humidity"></td>
+            <td id="edmonton-wind-degrees"></td>
+            <td id="edmonton-wind-speed"></td>
+          </tr>
+          <tr id="victoria-row">
+            <th scope="row" class="text-start">Victoria</th>
+            <td id="victoria-max-temp"></td>
+            <td id="victoria-min-temp"></td>
+            <td id="victoria-feels-like"></td>
+            <td id="victoria-humidity"></td>
+            <td id="victoria-wind-degrees"></td>
+            <td id="victoria-wind-speed"></td>
+          </tr>
+          <tr id="winnipeg-row">
+            <th scope="row" class="text-start">Winnipeg</th>
+            <td id="winnipeg-max-temp"></td>
+            <td id="winnipeg-min-temp"></td>
+            <td id="winnipeg-feels-like"></td>
+            <td id="winnipeg-humidity"></td>
+            <td id="winnipeg-wind-degrees"></td>
+            <td id="winnipeg-wind-speed"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="modal fade" id="feedback-modal" tabindex="-1" aria-labelledby="feedback-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -241,7 +243,7 @@
   <div class="cell footer">
     <nav id="foot"></nav>
   </div>
-  
+
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->

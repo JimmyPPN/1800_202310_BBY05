@@ -12,12 +12,12 @@ function fetchData(city) {
 
     .then(response => response.json())
     .then(data => {
-      const maxTemp = data.max_temp;
-      const minTemp = data.min_temp;
-      const feelsLike = data.feels_like;
-      const humidity = data.humidity;
-      const windDegrees = data.wind_degrees;
-      const windSpeed = data.wind_speed;
+      const maxTemp = data.max_temp || "N/A";
+      const minTemp = data.min_temp || "N/A";
+      const feelsLike = data.feels_like || "N/A";
+      const humidity = data.humidity || "N/A";
+      const windDegrees = data.wind_degrees || "N/A";
+      const windSpeed = data.wind_speed || "N/A";
 
       document.getElementById(`${city.toLowerCase()}-max-temp`).innerHTML = maxTemp;
       document.getElementById(`${city.toLowerCase()}-min-temp`).innerHTML = minTemp;

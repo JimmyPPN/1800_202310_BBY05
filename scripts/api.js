@@ -20,15 +20,15 @@ if (fileName.startsWith("main.html")) {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        temp.innerHTML = response.temp;
-        feels_like.innerHTML = response.feels_like;
-        humidity.innerHTML = response.humidity;
-        humidity1.innerHTML = response.humidity;
-        min_temp.innerHTML = response.min_temp;
-        max_temp.innerHTML = response.max_temp;
-        wind_speed.innerHTML = response.wind_speed;
-        wind_speed1.innerHTML = response.wind_speed;
-        wind_degrees.innerHTML = response.wind_degrees;
+        temp.innerHTML = response.temp || "N/A";
+        feels_like.innerHTML = response.feels_like || "N/A";
+        humidity.innerHTML = response.humidity || "N/A";
+        humidity1.innerHTML = response.humidity || "N/A";
+        min_temp.innerHTML = response.min_temp || "N/A";
+        max_temp.innerHTML = response.max_temp || "N/A";
+        wind_speed.innerHTML = response.wind_speed || "N/A";
+        wind_speed1.innerHTML = response.wind_speed || "N/A";
+        wind_degrees.innerHTML = response.wind_degrees || "N/A";
       })
       .catch((err) => console.error(err));
   };
