@@ -20,15 +20,16 @@ if (fileName.startsWith("main.html")) {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        temp.innerHTML = response.temp || "N/A";
-        feels_like.innerHTML = response.feels_like || "N/A";
-        humidity.innerHTML = response.humidity || "N/A";
-        humidity1.innerHTML = response.humidity || "N/A";
-        min_temp.innerHTML = response.min_temp || "N/A";
-        max_temp.innerHTML = response.max_temp || "N/A";
-        wind_speed.innerHTML = response.wind_speed || "N/A";
-        wind_speed1.innerHTML = response.wind_speed || "N/A";
-        wind_degrees.innerHTML = response.wind_degrees || "N/A";
+        temp.innerHTML = response.temp !== undefined ? response.temp : "(Service offline)";
+        feels_like.innerHTML = response.feels_like !== undefined ? response.feels_like : "(Service offline)";
+        humidity.innerHTML = response.humidity !== undefined ? response.humidity : "(Service offline)";
+        humidity1.innerHTML = response.humidity !== undefined ? response.humidity : "(Service offline)";
+        min_temp.innerHTML = response.min_temp !== undefined ? response.min_temp : "(Service offline)";
+        max_temp.innerHTML = response.max_temp !== undefined ? response.max_temp : "Service offline";
+        wind_speed.innerHTML = response.wind_speed !== undefined ? response.wind_speed : "(Service offline)";
+        wind_speed1.innerHTML = response.wind_speed !== undefined ? response.wind_speed : "(Service offline)";
+        wind_degrees.innerHTML = response.wind_degrees !== undefined ? response.wind_degrees : "(Service offline)";
+
       })
       .catch((err) => console.error(err));
   };

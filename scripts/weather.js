@@ -12,12 +12,13 @@ function fetchData(city) {
 
     .then(response => response.json())
     .then(data => {
-      const maxTemp = data.max_temp || "N/A";
-      const minTemp = data.min_temp || "N/A";
-      const feelsLike = data.feels_like || "N/A";
-      const humidity = data.humidity || "N/A";
-      const windDegrees = data.wind_degrees || "N/A";
-      const windSpeed = data.wind_speed || "N/A";
+      console.log(data);
+      const maxTemp = data.max_temp !== undefined ? data.max_temp : "Service offline";
+      const minTemp = data.min_temp !== undefined ? data.min_temp : "Service offline";
+      const feelsLike = data.feels_like !== undefined ? data.feels_like : "Service offline";
+      const humidity = data.humidity !== undefined ? data.humidity : "Service offline";
+      const windDegrees = data.wind_degrees !== undefined ? data.wind_degrees : "Service offline";
+      const windSpeed = data.wind_speed !== undefined ? data.wind_speed : "Service offline";
 
       document.getElementById(`${city.toLowerCase()}-max-temp`).innerHTML = maxTemp;
       document.getElementById(`${city.toLowerCase()}-min-temp`).innerHTML = minTemp;

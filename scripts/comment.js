@@ -73,22 +73,22 @@ function createFeedbackItem(doc) {
       const feedbackDate = feedback.timestamp.toDate();
       const today = new Date();
       if (feedbackDate.getDate() === today.getDate() &&
-          feedbackDate.getMonth() === today.getMonth() &&
-          feedbackDate.getFullYear() === today.getFullYear()) {
+        feedbackDate.getMonth() === today.getMonth() &&
+        feedbackDate.getFullYear() === today.getFullYear()) {
         feedbackItem.innerHTML = `
           <div><strong>Username:</strong> ${username}</div>
           <div><strong>Title:</strong> ${feedback.title}</div>
           <div><strong>Description:</strong> ${feedback.description}</div>
           <div><strong>Date:</strong> ${new Date(
-            feedbackDate
-          ).toLocaleDateString('en-US', options)} <b>(Today)</b></div>
+          feedbackDate
+        ).toLocaleDateString('en-US', options)} <b>(Today)</b></div>
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <i class="material-icons thumb-icon" data-type="up" data-id="${doc.id
-        }">thumb_up</i>
+          }">thumb_up</i>
               <span class="like-count">${likes}</span>
               <i class="material-icons thumb-icon" data-type="down" data-id="${doc.id
-        }">thumb_down</i>
+          }">thumb_down</i>
               <span class="dislike-count">${dislikes}</span>
             </div>
           </div>
@@ -99,15 +99,15 @@ function createFeedbackItem(doc) {
           <div><strong>Title:</strong> ${feedback.title}</div>
           <div><strong>Description:</strong> ${feedback.description}</div>
           <div><strong>Date:</strong> ${new Date(
-            feedbackDate
-          ).toLocaleDateString('en-US', options)}</div>
+          feedbackDate
+        ).toLocaleDateString('en-US', options)}</div>
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <i class="material-icons thumb-icon" data-type="up" data-id="${doc.id
-        }">thumb_up</i>
+          }">thumb_up</i>
               <span class="like-count">${likes}</span>
               <i class="material-icons thumb-icon" data-type="down" data-id="${doc.id
-        }">thumb_down</i>
+          }">thumb_down</i>
               <span class="dislike-count">${dislikes}</span>
             </div>
           </div>
@@ -124,7 +124,7 @@ function createFeedbackItem(doc) {
     });
 }
 
-// function uses the feedbackId to retrieve the feedback document from the Firestore database
+// retrieves a user document from the database
 function getUser(userId) {
   return db.collection("users").doc(userId).get();
 }

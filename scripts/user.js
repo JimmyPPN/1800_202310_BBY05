@@ -3,14 +3,10 @@ var currentUser;    // Current user's document in the database
 // Function to populate the user's info in the profile page
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
-
         if (user) {
-
             currentUser = db.collection("users").doc(user.uid)
-
             currentUser.get()
                 .then(userDoc => {
-
                     var userName = userDoc.data().name;
                     var userCountry = userDoc.data().country;
                     var userCity = userDoc.data().city;

@@ -31,33 +31,31 @@
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 
-<body >
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
+<body>
+  <!-- Navbar -->
   <div class="cell nav-bar">
     <nav id="nav"></nav>
   </div>
   <br />
+
+  <!-- Main Content -->
   <div class="container">
     <h1>Favorites</h1>
   </div>
   <br />
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
-        role="tab" aria-controls="nav-location" aria-selected="true">
-        Locations
-      </button>
-    </div>
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <div class="card" style="width: 100%">
-          <ol id="favorites-list" class="list-group list-group-flush">
-          </ol>
-        </div>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+      role="tab" aria-controls="nav-location" aria-selected="true">
+      Locations
+    </button>
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="card" style="width: 100%">
+        <ol id="favorites-list" class="list-group list-group-flush"></ol>
       </div>
     </div>
-  
+  </div>
 
   <!-- Footer -->
   <div class="cell footer">

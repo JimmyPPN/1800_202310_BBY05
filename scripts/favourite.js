@@ -1,7 +1,6 @@
 function doAll() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      // insertNameFromFirestore();
       getFavorites(user);
     } else {
       console.log("No user is signed in");
@@ -41,7 +40,7 @@ function getFavorites(user) {
           window.location.href = `main.html?city=${city}`;
         });
         li.appendChild(citySpan);
-        
+
         // Add remove button to each favorite
         const removeBtn = document.createElement("button");
         removeBtn.type = "button";
