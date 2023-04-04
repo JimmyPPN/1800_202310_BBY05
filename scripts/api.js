@@ -1,4 +1,5 @@
-localStorage.setItem("city", city);
+// Set the default city to Vancouver
+let city = "Vancouver";
 
 let fileName = location.href.split("/").slice(-1)[0];
 if (fileName.startsWith("main.html")) {
@@ -11,6 +12,8 @@ if (fileName.startsWith("main.html")) {
   };
 
   const getWeather = (city) => {
+    const cityName = document.getElementById("cityName");
+    console.log(cityName);
     cityName.innerHTML = city;
 
     fetch(
@@ -29,15 +32,17 @@ if (fileName.startsWith("main.html")) {
         wind_speed.innerHTML = response.wind_speed !== undefined ? response.wind_speed : "(Service offline)";
         wind_speed1.innerHTML = response.wind_speed !== undefined ? response.wind_speed : "(Service offline)";
         wind_degrees.innerHTML = response.wind_degrees !== undefined ? response.wind_degrees : "(Service offline)";
-
       })
       .catch((err) => console.error(err));
   };
-  document.getElementById("newCity").addEventListener("click", (e) => {
+
+  console.log(newCityButton);
+  $(newCityButton).on("click touchstart", (e) => {
     clearFeedbackDisplay();
     e.preventDefault();
-    window.location.replace("main.html?city=" + city.value);
-    getWeather(city.value);
+    const city = document.getElementById("city").value;
+    window.location.replace("main.html?city=" + city);
+    getWeather(city);
     updateFavoritesIcon();
   });
 
@@ -49,10 +54,10 @@ if (fileName.startsWith("main.html")) {
     getWeather("Vancouver");
   }
 } else {
-  var btn = document.getElementById("newCity");
-  btn.addEventListener("click", (e) => {
+  $(newCityButton).on("click touchstart", (e) => {
     e.preventDefault();
-    window.location.replace("main.html?city=" + city.value);
+    const city = document.getElementById("city").value;
+    window.location.replace("main.html?city=" + city);
     updateFavoritesIcon();
   });
 }
