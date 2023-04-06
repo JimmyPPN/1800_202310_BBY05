@@ -1,3 +1,4 @@
+// Call getFavorites() function to retrieve the user's favorite cities from firestore
 function doAll() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -15,13 +16,8 @@ function getFavorites(user) {
     .doc(user.uid)
     .get()
     .then((userDoc) => {
-      // Get the array of favorite cities
       const favorites = userDoc.data().favorites || [];
-
-      // Get the pointer to the favorites list element
       const favoritesList = document.getElementById("favorites-list");
-
-      // Clear the list first
       favoritesList.innerHTML = "";
 
       // Iterate through the array of favorite cities
@@ -30,8 +26,6 @@ function getFavorites(user) {
         li.className = "list-group-item ";
         li.style.height = "10em";
         li.style.cursor = "pointer";
-
-        // Add the city name as a span element
         const citySpan = document.createElement("span");
         citySpan.textContent = city;
         citySpan.style.fontWeight = "bold";
@@ -41,14 +35,12 @@ function getFavorites(user) {
         });
         li.appendChild(citySpan);
 
-        // Add remove button to each favorite
         const removeBtn = document.createElement("button");
         removeBtn.type = "button";
         removeBtn.className = "btn btn-secondary";
         removeBtn.style.float = "right";
         removeBtn.innerText = "Remove";
         removeBtn.addEventListener("click", () => {
-          // Get a reference to the user document in Firestore
           const userRef = db.collection("users").doc(user.uid);
           // Remove the city from favorites in the user document
           userRef

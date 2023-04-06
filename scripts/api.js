@@ -11,11 +11,10 @@ if (fileName.startsWith("main.html")) {
     },
   };
 
+  // getWeather function to get the weather data from the API
   const getWeather = (city) => {
     const cityName = document.getElementById("cityName");
-    console.log(cityName);
     cityName.innerHTML = city;
-
     fetch(
       "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
       options
@@ -36,6 +35,7 @@ if (fileName.startsWith("main.html")) {
       .catch((err) => console.error(err));
   };
 
+  // This function is called when the user clicks on search button
   console.log(newCityButton);
   $(newCityButton).on("click touchstart", (e) => {
     clearFeedbackDisplay();
@@ -46,6 +46,7 @@ if (fileName.startsWith("main.html")) {
     updateFavoritesIcon();
   });
 
+  // To verify search parameter and call getWeather function accordingly
   var params = new URLSearchParams(window.location.search);
   var c = params.get("city");
   if (c != null) {
@@ -54,6 +55,7 @@ if (fileName.startsWith("main.html")) {
     getWeather("Vancouver");
   }
 } else {
+  // When user search from other pages
   $(newCityButton).on("click touchstart", (e) => {
     e.preventDefault();
     const city = document.getElementById("city").value;
@@ -64,7 +66,7 @@ if (fileName.startsWith("main.html")) {
 
 // This function is called when the user clicks on search button
 function clearFeedbackDisplay() {
-  // clear the contents of the feedback display container
+  // clear the contents of the comments display container
   const feedbackDisplay = document.querySelector("#live-comments-container");
   feedbackDisplay.innerHTML = "";
 }

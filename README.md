@@ -2,12 +2,12 @@
 WeatherEye
 
 ## 1. Project Description
-"Our team Team (#BBY-05) is developing an app to help people prepare for severe weather changes with the help of personalized comments, real-time alerts, and unique features such as integration with other services"
+"Our team Team (#BBY-05) is developing an app to help people prepare for severe weather changes with the help of live comments, and unique features such as integration with other services"
 
 ## 2. Names of Contributors
 
-* Hi my name is Brandon Hi! I am a CST student at BCIT. I enjoy working in teams and solving problems. 
-I have some experience in java and c and would love to learn new languages as my career evolves.
+* Hi my name is Brandon. I am a CST student at BCIT. I enjoy working in teams and solving problems. 
+I have some experience in Java and C and would love to learn new languages as my career evolves.
 
 * Jimmy Nguyen (JimmyPPN - Github). I'm excited about this project because I get more hands-on programming experience.
 
@@ -24,14 +24,15 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 ## 4. Complete setup/installion/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
 Here are the steps:
+* User clicks on the "Get Started" button to signup/login.
 * User needs to create an account. Users will need to provide some basic information such as their name, email address, and choose a password to signin.
 * After signing in, the user will see a landing page with default city weather. They can search for weather of a new location.The search bar is in navbar.
 * The user can add cities to favorites by clicking on the heart (favorite) button.
-* To access favorites, the user can click on the favorite button in the navbar, where they can edit the list as well.
+* To access favorites, the user can click on the favorite button in the navbar, where they can edit the favorites list as well.
 * On the landing page, the app provides a feature to see live comments for a particular city with a rating feature (like/dislike button) to rate the comments.
 * The app allows users to provide feedback for the weather by clicking on the "give feedback" button.
 * Users can click on the profile button in the footer to edit their profile, such as name, city, and country.
-* If users need additional support, they can refer to the help page in menu.
+* If users need additional support, they can refer to the help page in the dropdown menu.
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs:
@@ -69,25 +70,25 @@ It has the following subfolders and files:
     /sardarprogrammer.png    # Logo(Team)              
 
 ├── pages                    # Folder for pages
-    /aboutus.html            # About the team 
+    /aboutus.html            # About the team page
     /favorite.html           # Favorites page
     /help.html               # FAQ page
-    /login.html              # login page
-    /main.html               # main landing page
-    /template.html           # template page - dev use only
-    /user.html               # profile page
+    /login.html              # Login page
+    /main.html               # Main landing page after user signup/logins
+    /template.html           # Template page - dev use only
+    /user.html               # Profile page
 
 ├── scripts                  # Folder for scripts
-    /api.js                  # Weather api keys
-    /authentication.js       # auth script
-    /comment.js              # comments script
-    /favorite.js             # favorite script
-    /firebaseAPI.js          # firebase api keys
-    /main.js                 # main page script
-    /script.js               # log out script
-    /skeleton.js             # Loading Nav and Footer
+    /api.js                  # Weather api keys and search function.
+    /authentication.js       # User authentication script
+    /comment.js              # Comments feature script
+    /favorite.js             # Favorite feature script
+    /firebaseAPI_BBY05.js    # Firebase api keys
+    /main.js                 # Main page script
+    /script.js               # Logging out user script
+    /skeleton.js             # Load Navbar and Footer
     /user.js                 # User settings script
-    /weather.js              # Load live weather script
+    /weather.js              # Load Common Places live weather(table).
 
 ├── styles                   # Folder for styles
     /style.css               # general site wide style 
@@ -104,5 +105,7 @@ It has the following subfolders and files:
 * <a href="https://firebase.google.com/">Firebase</a>
 * <a href="https://fonts.google.com/">Google Fonts</a>
 * <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://rapidapi.com/apininjas/api/weather-by-api-ninjas/">Weather Api</a>
+
 
 

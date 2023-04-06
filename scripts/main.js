@@ -17,10 +17,10 @@ insertNameFromFirestore();
 // to add the city to the favorite list
 function addToFavorites(cityName) {
   const location = document.getElementById(cityName).textContent;
-  // Save the city to Firestore storage
   const currentUser = firebase.auth().currentUser;
   if (currentUser) {
     const userRef = db.collection("users").doc(currentUser.uid);
+    // add the city to the favorites array
     userRef
       .update(
         {

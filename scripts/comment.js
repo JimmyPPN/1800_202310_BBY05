@@ -8,10 +8,10 @@ function showLiveComments() {
     return;
   }
 
-  getFeedback(city)
+  getComments(city)
     .then((sortedDocs) => {
-      const feedbackList = createFeedbackList(sortedDocs);
-      feedbackDisplay.appendChild(feedbackList);
+      const commentList = createCommentsList(sortedDocs);
+      feedbackDisplay.appendChild(commentList);
     })
     .catch((error) => {
       console.error("Error retrieving feedback documents: ", error);
@@ -22,7 +22,7 @@ function showLiveComments() {
 }
 
 // retrieves feedback documents for a particular city from the database
-function getFeedback(city) {
+function getComments(city) {
   return db
     .collection("feedback")
     .where("city", "==", city)
@@ -38,7 +38,7 @@ function getFeedback(city) {
 }
 
 // creates a list of feedback items
-function createFeedbackList(sortedDocs) {
+function createCommentsList(sortedDocs) {
   const feedbackList = document.createElement("ul");
   feedbackList.classList.add("list-group", "mb-2");
 
@@ -58,7 +58,7 @@ function createFeedbackList(sortedDocs) {
   return feedbackList;
 }
 
-// creates a feedback item
+// creates layout for a single comment
 function createFeedbackItem(doc) {
   const feedback = doc.data();
   const likes = feedback.likes || 0;
@@ -72,6 +72,7 @@ function createFeedbackItem(doc) {
       feedbackItem.classList.add("list-group-item", "mb-2");
       const feedbackDate = feedback.timestamp.toDate();
       const today = new Date();
+      // if the feedback was posted today, add a (Today) label
       if (feedbackDate.getDate() === today.getDate() &&
         feedbackDate.getMonth() === today.getMonth() &&
         feedbackDate.getFullYear() === today.getFullYear()) {

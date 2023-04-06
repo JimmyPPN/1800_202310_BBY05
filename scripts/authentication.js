@@ -4,17 +4,6 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      //------------------------------------------------------------------------------------------
-      // The code below is modified from default snippet provided by the FB documentation.
-      //
-      // If the user is a "brand new" user, then create a new "user" in your own database.
-      // Assign this user with the name and email provided.
-      // Before this works, you must enable "Firestore" from the firebase console.
-      // The Firestore rules must allow the user to write.
-      //------------------------------------------------------------------------------------------
       var user = authResult.user; // get the user object from the Firebase authentication database
       if (authResult.additionalUserInfo.isNewUser) {
         //if new user
@@ -22,9 +11,9 @@ var uiConfig = {
           .doc(user.uid)
           .set({
             //write to firestore. We are using the UID for the ID in users collection
-            name: user.displayName, 
-            email: user.email, 
-            country: "Canada", 
+            name: user.displayName,
+            email: user.email,
+            country: "Canada",
           })
           .then(function () {
             console.log("New user added to firestore");
